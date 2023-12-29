@@ -1,0 +1,12 @@
+# common
+/node_modules
+package-lock.json
+package.json
+
+# test files
+request.js
+session.js
+test.js
+/assets
+/quiz
+/results
