@@ -1,35 +1,12 @@
 const express = require("express");
-
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello Node");
-});
+app.set("port", process.env.PORT);
+// 바디 파서 등록
+app.use(express.json());
 
-// 연락처 가져오기.
-app.get("/contacts", (req, res) => {
-  res.send("Contact Pages");
-});
-
-// 특정 연락처 가져오기.
-app.get("/contacts/:id", (req, res) => {
-  res.send(`View Contact for ID : ${req.params.id}`);
-});
-
-// 새 연락처 추가하기.
-app.post("/contacts", (req, res) => {
-  res.send("Contacts Pages");
-});
-
-// 연락처 수정하기
-app.put("/contacts/:id", (req, res) => {
-  res.send(`Update Contact for ID : ${req.params.id}`);
-});
-
-// 연락처 삭제하기
-app.delete("/contacts/:id", (req, res) => {
-  res.send(`Delete Contact for ID : ${req.params.id}`);
-});
+// 미들웨어 등록
+app.use("/contacts", require("./routes/contactRoutes"));
 
 app.listen(3000, () => {
   console.log("서버 실행");
