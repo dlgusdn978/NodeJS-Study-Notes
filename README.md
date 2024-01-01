@@ -1,4 +1,4 @@
-![image](https://github.com/dlgusdn978/NodeJS-Study-Notes/assets/73580422/7938a28a-8526-4839-9124-61fdbd2ef8a0)# NodeJS
+# NodeJS
 
 ### 1일차
 #### NodeJS란?
