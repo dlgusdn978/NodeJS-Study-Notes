@@ -1,9 +1,22 @@
 const mysql = require("../config/dbConnect");
 
-let User = function (user) {
-  this.user_name = user.user_name;
-  this.user_email = user.user_email;
-  this.user_phone = user.user_phone;
+const user_name = "name";
+const user_email = "email";
+const user_phone = "phone";
+
+const Contact = {
+  find: async () => {
+    return new Promise((resolve, reject) => {
+      const query = "SELECT * FROM Contacts";
+      mysql.query(query, (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      });
+    });
+  },
 };
 
-module.exports = User;
+module.exports = Contact;
