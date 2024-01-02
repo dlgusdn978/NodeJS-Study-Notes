@@ -134,3 +134,33 @@
 #### AsyncHandler
  - 단순히 오류를 출력해야 하는 상황에서 사용하는 모듈.
  - try catch문을 일일히 입력해야하는 번거로움을 제거할 수 있음. (단, 예외 처리가 필수적인 상황에서는 사용하지 않음.)
+
+
+### 3일차
+#### 템플릿 엔진
+ - 사용자의 요청에 따라 달라지는 동적인 컨텐츠를 보여주기 위해 템플릿 엔진 필요
+    -> 템플릿 파일 : db 데이터 중 어떤 값을 어느 위치에 넣을지 미리 만들어 놓은 틀
+    -> 템플릿 엔진 : 템플릿 파일을 만들고 db에서 가져온 동적 데이터를 템플릿 파일에 연결.
+ - 다양한 종류의 템플릿 엔진이 존재. ex) ejs 등..
+ - views 폴더 생성 후 ejs 확장자를 활용하여 view 파일 생성.
+ - 이후 controller에 render() 함수를 이용하여 템플릿 등록
+
+   ![image](https://github.com/dlgusdn978/NodeJS-Study-Notes/assets/73580422/dac0f197-87bf-4349-a3f0-21beb40bb728)
+
+#### ejs 엔진 기본 사용법
+ - 컨트롤러에서 템플릿 파일로 값 넘기기
+    -> 기본 형태 : res.render(ejs 파일명, {변수 : data})
+ - 템플릿 파일에서 동적 요소 처리
+    -> <%= 변수 %>
+    -> <% 자바 스크립트 코드 %>
+    -> <%- HTML 코드 %>
+   
+   ![image](https://github.com/dlgusdn978/NodeJS-Study-Notes/assets/73580422/ab09b606-4c33-4718-9f42-fc90b5d90917)
+
+ - 템플릿 파일에서 정적 요소 처리
+    -> 정적인 요소는 public 폴더 내에 작성하고 다음과 같이 불러올 수 있다.
+   
+   ![image](https://github.com/dlgusdn978/NodeJS-Study-Notes/assets/73580422/f9d477cc-3927-4495-bd6c-988ef083daf1)
+
+
+
