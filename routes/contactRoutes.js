@@ -12,10 +12,10 @@ const {
   updateContact,
 } = require("../controllers/contactController");
 // 연락처 가져오기.
-router.route("/").get(getAllcontacts).post(createContacts);
+router.route("/").get(getAllcontacts);
+router.route("/:id").get(updateContact);
+router.route("/add").get(addContactForm).post(createContacts);
 
-router.route("/add").get(addContactForm);
-router.route("/update").get(updateContact);
 // router
 //   .route("/:id")
 //   .get((req, res) => {
