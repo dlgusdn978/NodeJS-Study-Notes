@@ -10,11 +10,13 @@ const {
   createContacts,
   addContactForm,
   updateContact,
+  getContact,
+  deleteContact,
 } = require("../controllers/contactController");
 // 연락처 가져오기.
 router.route("/").get(getAllcontacts);
-router.route("/:id").get(updateContact);
 router.route("/add").get(addContactForm).post(createContacts);
+router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
 
 // router
 //   .route("/:id")

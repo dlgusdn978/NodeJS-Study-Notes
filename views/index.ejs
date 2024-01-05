@@ -27,8 +27,12 @@
           <a href="/contacts/<%= contact.id %>" class="btn update" title="수정">
             <i class="fas fa-pencil-alt"></i>
           </a>
-          <a href="#" class="btn delete" title="삭제">
-            <i class="fas fa-times"></i>
+            <form
+              action="/contacts/<%= contact.id %>?_method=DELETE"
+              method="POST"
+            >
+              <input type="submit" class="btn delete" title="삭제" value="X" />
+            </form>
           </a>
         </td>
       </tr>

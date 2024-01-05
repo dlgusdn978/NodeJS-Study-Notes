@@ -15,6 +15,7 @@
     method="POST"
     id="add-user"
   >
+    <input type="hidden" name="id" id="id" value="<%= contact.id %>" />
     <div class="user-info">
       <div class="col-12">
         <label for="name" class="col-form-label">이름(Full Name)</label>
@@ -24,7 +25,7 @@
             class="form-control"
             name="name"
             id="name"
-            value="도레미"
+            value="<%= contact.name %>"
           />
         </div>
       </div>
@@ -36,7 +37,7 @@
             class="form-control"
             name="email"
             id="email"
-            value="doremi@abc.def"
+            value="<%= contact.email %>"
           />
         </div>
       </div>
@@ -48,7 +49,7 @@
             class="form-control"
             name="phone"
             id="phone"
-            value="456-7890-1234"
+            value="<%= contact.phone %>"
           />
         </div>
       </div>
