@@ -13,7 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // 미들웨어 등록
+app.use("/", require("./routes/loginRoutes"));
 app.use("/contacts", require("./routes/contactRoutes"));
+
 app.use(express.static("./public"));
 
 app.listen(3000, () => {
